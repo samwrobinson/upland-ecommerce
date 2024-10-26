@@ -14,6 +14,13 @@ const configCss = require("./src/config/eleventy/css");
 const configJs = require("./src/config/eleventy/javascript");
 
 const isProduction = process.env.ELEVENTY_ENV === "PROD";
+const pluginShopify = require("eleventy-plugin-shopify");
+
+// Config Imports
+const configShopify = require("./src/config/plugins/shopify");
+
+// Filter Imports
+const filterGetProductsInCollection = require("./src/config/filters/getProductsInCollection");
 
 module.exports = function (eleventyConfig) {
     /**
@@ -48,6 +55,9 @@ module.exports = function (eleventyConfig) {
         // https://github.com/gregives/eleventy-critical-css
         eleventyConfig.addPlugin(pluginCritical, configCritical);
     }
+    // Queries your Shopify store at build time to expose product and collection data under the `shopify` global object
+    // https://github.com/dleatherman/eleventy-plugin-shopify
+    eleventyConfig.addPlugin(pluginShopify, configShopify);
 
     /**
      *  PASSTHROUGH'S
@@ -79,6 +89,7 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addTemplateFormats("js");
     eleventyConfig.addExtension("js", configJs);
+    eleventyConfig.addFilter("getProductsInCollection", filterGetProductsInCollection);
 
     return {
         dir: {

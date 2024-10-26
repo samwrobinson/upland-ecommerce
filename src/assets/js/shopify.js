@@ -1,6 +1,6 @@
 // CS-TODO: If you're using the optimisation module, you can uncomment the below line to import ShopifyBuy
 // via an npm module, and remove the SDK from the "Shopify Scripts" in _includes/base.html
-// import ShopifyBuy from '@shopify/buy-button-js'
+import ShopifyBuy from '@shopify/buy-button-js'
 
 window.shopify.client = ShopifyBuy.buildClient({
     domain: window.shopify.auth.store_url,

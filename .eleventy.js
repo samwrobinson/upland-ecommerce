@@ -71,11 +71,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/assets/js");
     eleventyConfig.addPassthroughCopy("./src/assets/svgs");
 
-    eleventyConfig.addPassthroughCopy("./src/assets/css"); // CS-TODO - For optimization branch, remove CSS passthrough
     eleventyConfig.addPassthroughCopy("./src/assets/favicons");
     eleventyConfig.addPassthroughCopy("./src/assets/fonts");
     eleventyConfig.addPassthroughCopy("./src/assets/images");
-    eleventyConfig.addPassthroughCopy("./src/assets/js"); // CS-TODO - For optimization branch, remove JS passthrough
     eleventyConfig.addPassthroughCopy("./src/assets/svgs");
 
     /**

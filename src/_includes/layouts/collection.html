@@ -21,41 +21,56 @@
     <!-- ============================================ -->
     <!--                 Collection                   -->
     <!-- ============================================ -->
+<!-- Filter and Sort Buttons -->
+<section id="filter-section">
+    <div class="filter-buttons">
+        <!-- <button class="filter-button" data-min="0" data-max="50">$0 - $50</button>
+        <button class="filter-button" data-min="51" data-max="100">$51 - $100</button>
+        <button class="filter-button" data-min="101" data-max="200">$101 - $200</button>
+        <button class="filter-button" data-min="201">$200+</button> -->
+        <button id="sort-asc">Sort by Price (Low to High)</button>
+        <button id="sort-desc">Sort by Price (High to Low)</button>
+        <button id="reset-filters">Show All</button>
+    </div>
+</section>
 
-    <section id="collection">
-        <div class="cs-container">
-            <div class="cs-card-group">
-                {% for product in shopProducts | getProductsInCollection(shopCollection.idNumber) %}
-                    {% if product.images | length > 0 %}
-                        <div class="cs-item">
-                            <a href="/shop/{{ product.handle }}" class="cs-link">
-                                <div class="cs-image-group">
-                                    <picture class="cs-picture">
-                                        <img loading="lazy" decoding="async" src="{{ product.images[0].src }}" alt="{{ product.images[0].altText or 'a product from Gill Rush' }}" width="1280" height="568">
-                                    </picture>
-                                    {% if product.saleAmount %}
-                                        <span class="cs-offer">
-                                            {{ product.saleAmount }}% Off!
-                                        </span>
-                                    {% endif %}
-                                </div>
-                                <div class="cs-details">
-                                    <h3 class="cs-product">{{ product.title }}</h3>
-                                    <div class="cs-wrapper">
-                                        <div class="cs-flex">
-                                            <span class="cs-price">{{ product.price }}</span>
-                                            {% if product.compareAtPrice %}
-                                                <span class="cs-old-price">{{ product.compareAtPrice }}</span>
-                                            {% endif %}
-                                        </div>
+<!-- Render Collection -->
+<section id="collection">
+    <div class="cs-container">
+        <div class="cs-card-group" id="product-list">
+            {% for product in shopProducts | getProductsInCollection(shopCollection.idNumber) %}
+                {% if product.images | length > 0 %}
+                    <div class="cs-item" data-price="{{ product.priceRange.minVariantPrice.amount }}">
+                        <a href="/shop/{{ product.handle }}" class="cs-link">
+                            <div class="cs-image-group">
+                                <picture class="cs-picture">
+                                    <img loading="lazy" decoding="async" src="{{ product.images[0].src }}" alt="{{ product.images[0].altText or 'a product from Gill Rush' }}" width="1280" height="568">
+                                </picture>
+                                {% if product.saleAmount %}
+                                    <span class="cs-offer">
+                                        {{ product.saleAmount }}% Off!
+                                    </span>
+                                {% endif %}
+                            </div>
+                            <div class="cs-details">
+                                <h3 class="cs-product">{{ product.title }}</h3>
+                                <div class="cs-wrapper">
+                                    <div class="cs-flex">
+                                        <span class="cs-price">{{ product.price }}</span>
+                                        {% if product.compareAtPrice %}
+                                            <span class="cs-old-price">{{ product.compareAtPrice }}</span>
+                                        {% endif %}
                                     </div>
                                 </div>
-                            </a>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-
-            </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
-    </section>
+    </div>
+</section>
+
+<script src="/assets/js/filter.js"></script>
+
 {% endblock %}

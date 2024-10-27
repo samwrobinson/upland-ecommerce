@@ -1,0 +1,31 @@
+---
+title: "The Optimization Branch"
+description: "The optimation branch of the advanced starter kit. Provides tools to optimise your website in an efficient way, including minification, bundling, automatic inlining of critical CSS, automatic asset optimization and a PostCSS pipeline."
+permalink: 'about/'
+eleventyNavigation:
+    key: 'About'
+    order: '300'
+---
+
+{% extends 'layouts/base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/optimization.css">
+{% endblock %}
+
+{% block body %}
+    
+    {# Inlining the script tag to make it easier when merging #}
+    <script>
+        const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
+        for (const item of faqItems) {
+            const onClick = () => {
+                item
+                    .classList
+                    .toggle('active')
+            }
+            item.addEventListener('click', onClick)
+        }
+    </script>
+
+{% endblock %}

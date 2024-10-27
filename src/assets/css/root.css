@@ -1,6 +1,65 @@
 /*-- -------------------------- -->
 <---         Core Styles        -->
 <--- -------------------------- -*/
+
+/* montserrat-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/montserrat-v26-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* montserrat-500 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/montserrat-v26-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* montserrat-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/montserrat-v26-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* montserrat-900 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/montserrat-v26-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* poppins-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/poppins-v21-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-500 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/poppins-v21-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/poppins-v21-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
 @media only screen and (min-width: 0rem) {
     :root {
         /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
@@ -18,7 +77,7 @@
         --bodyFontSize: 1rem;
         /* 60px - 100px top and bottom */
         --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
-        --bodyFontFamily: Arial, Helvetica, sans-serif;
+        --bodyFontFamily: 'Poppins', sans-serif;
     }
     body {
         font-family: var(--bodyFontFamily);
@@ -37,6 +96,7 @@
         line-height: 1.2em;
         text-align: inherit;
         text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
         letter-spacing: 0.1em;
         margin-bottom: 0.25rem;
         color: var(--primary);
@@ -48,6 +108,7 @@
         line-height: 1.2em;
         text-align: inherit;
         max-width: 43.75rem;
+        font-family: 'Montserrat', sans-serif;
         margin: 0 0 1rem 0;
         color: var(--headerColor);
         position: relative;
@@ -59,6 +120,7 @@
         width: 100%;
         max-width: 40.625rem;
         margin: 0;
+        font-family: 'Poppins', sans-serif;
         color: var(--bodyTextColor);
     }
     .cs-button-solid {
@@ -315,6 +377,7 @@
         text-align: center;
         list-style: none;
         width: 100%;
+        font-family: 'Montserrat', sans-serif;
         margin-right: 0;
         opacity: 0;
         /* transition from these values */
@@ -366,6 +429,7 @@
         line-height: 1.2em;
         text-decoration: none;
         margin: 0;
+        font-family: 'Montserrat', sans-serif;
         color: var(--headerColor);
         display: inline-block;
         position: relative;
@@ -833,7 +897,7 @@
     }
     #cs-navigation .cs-bottom-bar {
         width: 100%;
-        background-color: #1a1a1a;
+        background-color: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -893,7 +957,7 @@
         text-transform: uppercase;
         text-decoration: none;
         margin: 0;
-        color: var(--bodyTextColorWhite);
+        color: var(--primary);
         display: block;
         position: relative;
         transition: color 0.3s;

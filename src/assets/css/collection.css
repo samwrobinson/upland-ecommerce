@@ -61,6 +61,20 @@
         color: #fff;
         display: block;
     }
+
+    .filter-buttons {
+        display: flex;
+        justify-content: space-around;
+        padding: clamp(1rem, 4vh, 1.5rem);
+    }
+
+    .filter-buttons > * {
+        max-width: 100px;
+        background-color: var(--primary);
+        font-family: 'Poppins', sans-serif;
+        border: none;
+        font-size: .7rem;
+    }
 }
 /* Tablet */
 @media only screen and (min-width: 48em) {
@@ -69,6 +83,19 @@
     }
     #int-hero h1 {
         font-size: 4rem;
+    }
+    .filter-buttons {
+        width: 50%;
+        margin: 0 25%;
+    }
+
+    .filter-buttons > * {
+        max-width: 200px;
+        background-color: var(--primary);
+        font-family: 'Poppins', sans-serif;
+        font-size: .9rem;
+        padding: 9px;
+        margin: 0 15px;
     }
 }
 /* Small Desktop */

@@ -66,6 +66,7 @@
         display: flex;
         justify-content: space-around;
         padding: clamp(1rem, 4vh, 1.5rem);
+        flex-wrap: wrap;
     }
 
     .filter-buttons > * {
@@ -73,7 +74,15 @@
         background-color: var(--primary);
         font-family: 'Poppins', sans-serif;
         border: none;
+        border-radius: 2px;
         font-size: .7rem;
+        margin: 4px 0;
+        transition: all 200ms ease-in-out;
+    }
+
+    .filter-buttons > *:hover {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        transform: translateY(-4px);
     }
 }
 /* Tablet */
@@ -85,17 +94,15 @@
         font-size: 4rem;
     }
     .filter-buttons {
-        width: 50%;
-        margin: 0 25%;
+        width: 100%;
     }
 
     .filter-buttons > * {
-        max-width: 200px;
         background-color: var(--primary);
         font-family: 'Poppins', sans-serif;
         font-size: .9rem;
         padding: 9px;
-        margin: 0 15px;
+        margin: 4px 15px;
     }
 }
 /* Small Desktop */
@@ -233,10 +240,42 @@
 }
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
+    #collection {
+        width: 90%;
+    }
+
     #collection .cs-card-group {
         grid-template-columns: repeat(4, 1fr);
     }
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 6fr; /* Two columns: 1/4 for filter, 3/4 for products */
+        gap: 1rem; /* Space between the filter and the products */
+    }
+    
+    /* Move filter-section to the left */
+    #filter-section {
+        grid-column: 1; /* Ensure filter section is in the first column */
+        align-self: start;
+        padding: var(--sectionPadding);
+    }
+    
+    /* Collection section takes up the second column */
+    #collection {
+        grid-column: 2; /* Ensure the product collection starts in the second column */
+    }
+    
+    .filter-buttons {
+        display: flex;
+        max-width: 400px;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        flex-direction: column; /* Make filter buttons stack vertically */
+        gap: 1rem; /* Space between filter buttons */
+    }
 }
+
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
     body.dark-mode #collection .cs-offer,

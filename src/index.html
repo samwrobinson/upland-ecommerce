@@ -77,5 +77,94 @@ eleventyNavigation:
         </div>
     </section>
 
+<!-- ============================================ -->
+<!--                Meet The Team                 -->
+<!-- ============================================ -->
+
+<section id="meet-team-1141">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <span class="cs-topper">Upland Coffee</span>
+                <h2 class="cs-title">Meet The Team Behind It All</h2>
+                <p>Moxie and Sam founded upland Coffee in 2022 after Moxie tore her ACL. It was a project that they could bond over during the winter months that blossomed into a love for artisan coffee, and sharing it with others.</p>
+            </div>
+            <a href="" class="cs-button-solid">View All Members</a>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/Bareroots-6.jpg" | resize({width: 686, height: 850}) | webp %}">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/Bareroots-6.jpg" | resize({width: 610, height: 814}) | webp %}">
+                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/Bareroots-6.jpg" | resize({width: 610, height: 814}) | webp %}" alt="Moxie Robinson">
+                </picture>
+                <div class="cs-info">
+                    <span class="cs-name">Moxie Robinson</span>
+                    <span class="cs-job">Marketing & Branding</span>
+                </div>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/sam.jpg" | resize({width: 686, height: 850}) | webp %}">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/sam.jpg" | resize({width: 610, height: 814}) | webp %}">
+                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/sam.jpg" | resize({width: 610, height: 814}) | webp %}" alt="Moxie Robinson">
+                </picture>
+                <div class="cs-info">
+                    <span class="cs-name">Sam Robinson</span>
+                    <span class="cs-job">Lead Roaster</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Collection                  -->
+<!-- ============================================ -->
+
+<section id="collection-1578">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Categories</span>
+            <h2 class="cs-title">Shop By Categories</h2>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a href="/collection/beans" class="cs-link">
+                    <span class="cs-category">Coffee</span>
+                    <picture class="cs-background" aria-hidden="true">
+                        <source media="(max-width: 600px)"
+                                srcset="{% getUrl "/assets/images/coffee.jpg" | resize({width: 686, height: 450}) | webp %}">
+                        <source media="(min-width: 601px)"
+                                srcset="{% getUrl "/assets/images/coffee.jpg" | resize({width: 610, height: 696}) | webp %}">
+                        <img loading="lazy" decoding="async"
+                                src="{% getUrl "/assets/images/coffee.jpg" | resize({width: 610, height: 696}) | webp %}"
+                                alt="Cooling coffee">
+                    </picture>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="/collection/equipment" class="cs-link">
+                    <span class="cs-category">Equipment</span>
+                    <picture class="cs-background" aria-hidden="true">
+                        <source media="(max-width: 600px)"
+                                srcset="{% getUrl "/assets/images/equipment.jpg" | resize({width: 686, height: 450}) | webp %}">
+                        <source media="(min-width: 601px)"
+                                srcset="{% getUrl "/assets/images/equipment.jpg" | resize({width: 610, height: 696}) | webp %}">
+                        <img loading="lazy" decoding="async"
+                                src="{% getUrl "/assets/images/coffee.jpg" | resize({width: 610, height: 696}) | webp %}"
+                                alt="Brewing with Chemex">
+                    </picture>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+                                
+                                
 
 {% endblock %}

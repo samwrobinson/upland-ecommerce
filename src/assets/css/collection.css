@@ -1,6 +1,18 @@
 /*-- -------------------------- -->
 <---   Interior Page Header     -->
 <--- -------------------------- -*/
+
+@keyframes buttonSlide {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 /* Mobile */
 @media only screen and (min-width: 0em) {
     #int-hero {
@@ -62,14 +74,23 @@
         display: block;
     }
 
-    .filter-buttons {
+    #filter-section {
+        width: 100%;
+        height: 100%;
+    }
+
+    #price-filter-button {
+        display: none;
+    }
+
+    .price-filter-buttons {
         display: flex;
         justify-content: space-around;
         padding: clamp(1rem, 4vh, 1.5rem);
         flex-wrap: wrap;
     }
 
-    .filter-buttons > * {
+    .price-filter-buttons > * {
         max-width: 100px;
         background-color: var(--primary);
         font-family: 'Poppins', sans-serif;
@@ -80,10 +101,55 @@
         transition: all 200ms ease-in-out;
     }
 
-    .filter-buttons > *:hover {
+    .price-filter-buttons > *:hover {
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         transform: translateY(-4px);
     }
+
+    .toggle-button {
+        background-color: #333;
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        padding: 0.5rem 1rem;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 1rem;
+        border-radius: 2px;
+        transition: all 200ms ease-in-out;
+    }
+    
+    .toggle-button:hover {
+        background-color: #555;
+    }
+
+    /* Apply animation to each button with a staggered delay */
+    .price-filter-buttons button {
+        opacity: 0;
+        animation: buttonSlide 0.5s ease forwards;
+    }
+
+    .price-filter-buttons button:nth-child(1) {
+        animation-delay: 0s;
+    }
+    .price-filter-buttons button:nth-child(2) {
+        animation-delay: 0.1s;
+    }
+    .price-filter-buttons button:nth-child(3) {
+        animation-delay: 0.2s;
+    }
+    .price-filter-buttons button:nth-child(4) {
+        animation-delay: 0.3s;
+    }
+    .price-filter-buttons button:nth-child(5) {
+        animation-delay: 0.4s;
+    }
+    .price-filter-buttons button:nth-child(6) {
+        animation-delay: 0.5s;
+    }
+    .price-filter-buttons button:nth-child(7) {
+        animation-delay: 0.6s;
+    }
+    
 }
 /* Tablet */
 @media only screen and (min-width: 48em) {
@@ -93,16 +159,18 @@
     #int-hero h1 {
         font-size: 4rem;
     }
-    .filter-buttons {
+    .price-filter-buttons {
         width: 100%;
+        align-items: center;
     }
 
-    .filter-buttons > * {
+    .price-filter-buttons > * {
         background-color: var(--primary);
         font-family: 'Poppins', sans-serif;
         font-size: .9rem;
         padding: 9px;
         margin: 4px 15px;
+        width: 100%;
     }
 }
 /* Small Desktop */
@@ -114,6 +182,9 @@
         padding-top: 11.25rem;
         background-attachment: fixed;
         padding-block-end: 6.25rem;
+    }
+    #filter-section {
+        margin-left: 2rem;
     }
 }
 /*-- -------------------------- -->

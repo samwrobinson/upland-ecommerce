@@ -5,8 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const sortDescButton = document.getElementById('sort-desc');
     const resetButton = document.getElementById('reset-filters');
     const productItems = Array.from(document.querySelectorAll('.cs-item'));
-
-    console.log(productItems);
+    
 
     // Function to filter products by price range
     function filterProducts(minPrice, maxPrice) {
@@ -51,5 +50,19 @@ document.addEventListener("DOMContentLoaded", function () {
         productItems.forEach(item => {
             item.style.display = 'block';
         });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("price-filter-toggle");
+    const priceFilters = document.getElementById("price-filter-buttons");
+
+    toggleButton.addEventListener("click", function () {
+        // Toggle the visibility of the price filter buttons
+        if (priceFilters.style.display === "none") {
+            priceFilters.style.display = "flex";
+        } else {
+            priceFilters.style.display = "none";
+        }
     });
 });

@@ -24,17 +24,28 @@
 
 <div class="container">
     <!-- Filter and Sort Buttons -->
-    <section id="filter-section">
-        <div class="filter-buttons">
-            <button class="filter-button" data-min="0" data-max="50">$0 - $50</button>
-            <button class="filter-button" data-min="51" data-max="100">$51 - $100</button>
-            <button class="filter-button" data-min="101" data-max="200">$101 - $200</button>
-            <button class="filter-button" data-min="201">$200+</button>
-            <button id="sort-asc">Sort by Price (Low to High)</button>
-            <button id="sort-desc">Sort by Price (High to Low)</button>
-            <button id="reset-filters">Show All</button>
-        </div>
-    </section>
+<section id="filter-section">
+    <h4>Filters</h4>
+    <h5>Price</h5>
+    <button id="price-filter-toggle" class="toggle-button">Toggle Price Filters</button>
+    <div class="price-filter-buttons" id="price-filter-buttons" style="display: none;">
+        <!-- Price Filters -->
+        <button class="filter-button" data-min="0" data-max="50">$0 - $50</button>
+        <button class="filter-button" data-min="51" data-max="100">$51 - $100</button>
+        <button class="filter-button" data-min="101" data-max="200">$101 - $200</button>
+        <button class="filter-button" data-min="201">$200+</button>
+        
+        <!-- Sort Buttons -->
+        <button id="sort-asc">Sort by Price (Low to High)</button>
+        <button id="sort-desc">Sort by Price (High to Low)</button>
+        
+        <!-- Reset Button -->
+        <button id="reset-filters">Show All</button>
+    </div>
+</section>
+
+    
+    
     
     <!-- Render Collection -->
     <section id="collection">

@@ -172,6 +172,7 @@
         padding: 9px;
         margin: 4px 15px;
         width: 100%;
+        max-width: 200px;
     }
 }
 /* Small Desktop */
@@ -317,11 +318,11 @@
     }
 
     #collection .cs-card-group {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     .container {
         display: grid;
-        grid-template-columns: 1fr 6fr; /* Two columns: 1/4 for filter, 3/4 for products */
+        grid-template-columns: 1fr 3fr; /* Two columns: 1/4 for filter, 3/4 for products */
         gap: 1rem; /* Space between the filter and the products */
     }
     
@@ -345,6 +346,13 @@
         width: 100%;
         flex-direction: column; /* Make filter buttons stack vertically */
         gap: 1rem; /* Space between filter buttons */
+    }
+}
+
+/* Large Desktop - 1024px */
+@media only screen and (min-width: 70rem) {
+    #collection .cs-card-group {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 

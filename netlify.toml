@@ -28,4 +28,4 @@ package = "netlify-plugin-cache"
 
 
 [functions]
-  directory = "sr/functions"
+  directory = "src/functions"

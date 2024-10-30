@@ -417,6 +417,7 @@
         padding: 1rem;
         background-color: #f4f4f4;
         border-radius: 4px;
+        max-width: 150px;
         font-family: 'Poppins', sans-serif;
         text-align: center;
         margin-top: 1rem;

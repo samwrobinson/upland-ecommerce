@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const stockFilterButtons = document.querySelectorAll('.stock-filter-button');
     const productItems = Array.from(document.querySelectorAll('.cs-item'));
 
+    // Track original product items order and visibility
+    const originalItems = [...productItems];
+
     // Function to filter products by price range
     function filterProducts(minPrice, maxPrice) {
         productItems.forEach(item => {
@@ -20,11 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
     function filterByStock(stockStatus) {
         console.log(`Filtering by stock status: ${stockStatus}`);
         productItems.forEach(item => {
-            const productStock = item.dataset.stock; // Read stock status from data attribute
+            const productStock = item.dataset.stock;
             const productName = item.querySelector('.cs-product').innerText;
             console.log(`Product: ${productName}, Stock: ${productStock}`);
             
-            // Check if product stock matches the desired stock status
             if (productStock === stockStatus) {
                 item.style.display = 'block';
                 console.log(`Showing: ${productName}`);
@@ -54,17 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to sort products
     function sortProducts(order) {
-        // Filter out items that are currently hidden
         const visibleItems = productItems.filter(item => item.style.display !== 'none');
 
-        // Sort the visible items by price
         const sortedItems = visibleItems.sort((a, b) => {
             const priceA = parseFloat(a.dataset.price);
             const priceB = parseFloat(b.dataset.price);
             return order === 'asc' ? priceA - priceB : priceB - priceA;
         });
 
-        // Clear the current product list and append sorted items
         productList.innerHTML = '';
         sortedItems.forEach(item => productList.appendChild(item));
     }
@@ -73,15 +72,15 @@ document.addEventListener("DOMContentLoaded", function () {
     sortAscButton.addEventListener('click', () => sortProducts('asc'));
     sortDescButton.addEventListener('click', () => sortProducts('desc'));
 
-
-    // Reset button to show all products
+    // Reset button to restore original order and visibility
     resetButton.addEventListener('click', () => {
-        productItems.forEach(item => {
-            item.style.display = 'block';
+        productList.innerHTML = '';
+        originalItems.forEach(item => {
+            item.style.display = 'block'; // Show all items
+            productList.appendChild(item); // Append in original order
         });
     });
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.getElementById("price-filter-toggle");
@@ -90,20 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const stockFilters = document.getElementById("stock-filter-buttons");
 
     toggleButton.addEventListener("click", function () {
-        // Toggle the visibility of the price filter buttons
-        if (priceFilters.style.display === "none") {
-            priceFilters.style.display = "flex";
-        } else {
-            priceFilters.style.display = "none";
-        }
+        priceFilters.style.display = priceFilters.style.display === "none" ? "flex" : "none";
     });
 
     stockButton.addEventListener("click", function () {
-        // Toggle the visibility of the stock filter buttons
-        if (stockFilters.style.display === "none") {
-            stockFilters.style.display = "flex";
-        } else {
-            stockFilters.style.display = "none";
-        }
+        stockFilters.style.display = stockFilters.style.display === "none" ? "flex" : "none";
     });
 });

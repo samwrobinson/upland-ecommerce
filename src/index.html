@@ -57,7 +57,7 @@ eleventyNavigation:
                 <p class="cs-text">
                     With backgrounds as diverse as Vermont itself, Moxie and Sam Robinson bring artistry, passion, and experience to each roast. From marketing to perfecting the roast, this duo has transformed Upland Coffee from a small project into a craft coffee brand that brings a taste of Vermont to you.
                 </p>
-                <a href="" class="cs-button-solid">Read More</a>
+                <a href="/shop" class="cs-button-solid">Shop Now</a>
             </div>
             
             <div class="cs-image-group">
@@ -78,6 +78,65 @@ eleventyNavigation:
     </section>
 
 <!-- ============================================ -->
+<!--             Side By Side Reverse             -->
+<!-- ============================================ -->
+
+<section id="sbsr-1561">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <!--Top left image-->
+            <picture class="cs-picture cs-picture1">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/coffee-dropping.jpg" | resize({width: 280, height: 242}) | webp %}">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/coffee-dropping.jpg" | resize({width: 468, height: 532}) | webp %}">
+                <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/coffee-dropping.jpg" | resize({width: 468, height: 532}) | webp %}" alt="mechanic" width="305" height="265">
+            </picture>
+            <!--Top Right image-->
+            <picture class="cs-picture cs-picture2">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/coffee-2.jpg" | resize({width: 180, height: 242}) | webp %}">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/coffee-2.jpg" | resize({width: 300, height: 532}) | webp %}">
+                <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/coffee-2.jpg" | resize({width: 300, height: 532}) | webp %}" alt="mechanic" width="197" height="265">
+            </picture>
+            <!--Bottom Left image-->
+            <picture class="cs-picture cs-picture3">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/coffee-4.jpg" | resize({width: 200, height: 210}) | webp %}">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/coffee-4.jpg" | resize({width: 332, height: 462}) | webp %}">
+                <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/coffee-4.jpg" | resize({width: 332, height: 462}) | webp %}" alt="mechanic" width="217" height="230">
+            </picture>
+            <!--Bottom right image-->
+            <picture class="cs-picture cs-picture4">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/coffee-3.jpg" | resize({width: 280, height: 200}) | webp %}">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/coffee-3.jpg" | resize({width: 466, height: 426}) | webp %}">
+                <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/coffee-3.jpg" | resize({width: 466, height: 426}) | webp %} alt="mechanic" width="304" height="212">
+            </picture>
+            <!--Middle image-->
+            <picture class="cs-picture cs-picture5">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/vermont-snow.jpg" | resize({width: 280, height: 408}) | webp %}">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/vermont-snow.jpg" | resize({width: 468, height: 894}) | webp %}">
+                <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/vermont-snow.jpg" | resize({width: 468, height: 894}) | webp %}" alt="mechanic" width="305" height="445">
+            </picture>
+        </div>
+        <div class="cs-content">
+            <span class="cs-topper">Our coffee</span>
+            <h2 class="cs-title">Quality Coffee, Handcrafted in Vermont</h2>
+            <p class="cs-text">
+                Dive into the rich, earthy flavors of Upland Coffee, a brand born in the heart of the Green Mountains and inspired by the rugged beauty of Vermont. Every cup of Upland Coffee is crafted to capture the essence of Vermont’s wild spirit and artisanal tradition. Whether you’re starting your day or savoring a quiet moment, our coffee is more than a drink; it’s a Vermont experience in a cup.            </p>
+            <a href="#collection-1578" class="cs-button-solid">View All Collections</a>
+        </div>
+    </div>
+</section>
+                                
+
+<!-- ============================================ -->
 <!--                Meet The Team                 -->
 <!-- ============================================ -->
 
@@ -89,7 +148,7 @@ eleventyNavigation:
                 <h2 class="cs-title">Meet The Team Behind It All</h2>
                 <p>Moxie and Sam founded upland Coffee in 2022 after Moxie tore her ACL. It was a project that they could bond over during the winter months that blossomed into a love for artisan coffee, and sharing it with others.</p>
             </div>
-            <a href="" class="cs-button-solid">View All Members</a>
+            <a href="/about" class="cs-button-solid">Learn More</a>
         </div>
         <ul class="cs-card-group">
             <li class="cs-item">

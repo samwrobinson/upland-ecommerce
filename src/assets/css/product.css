@@ -157,6 +157,7 @@
         font-weight: 700;
         line-height: 1.2em;
         width: fit-content;
+        margin-top: .8rem;
         margin-bottom: 1.5rem;
         color: var(--bodyTextColor);
         /* using a border-bottom instead of text-decoration to give more space between the line and the text */

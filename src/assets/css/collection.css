@@ -409,3 +409,77 @@
         background-color: rgba(255, 255, 255, 0.1);
     }
 }
+
+
+#filter-section {
+    /* Base styling for the main navigation list */
+    #cs-expanded {
+        padding: 1rem;
+        background-color: #f4f4f4;
+        border-radius: 4px;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    /* Remove default list styling */
+    #cs-expanded,
+    #cs-expanded .cs-drop-ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Style for each list item */
+    #cs-expanded .cs-li {
+        margin: 0.5rem 0;
+        position: relative;
+    }
+
+    /* Link styling for navigation items */
+    #cs-expanded .cs-li-link {
+        text-decoration: none;
+        color: #333;
+        font-size: 1rem;
+        font-weight: 600;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+        border-radius: 3px;
+    }
+
+    /* Hover effect for links */
+    #cs-expanded .cs-li-link:hover {
+        color: #fff;
+        background-color: var(--primary);
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+
+    /* Dropdown list hidden by default */
+    #cs-expanded .cs-drop-ul {
+        display: none;
+        background-color: #eaeaea;
+        border-radius: 4px;
+        margin-top: 0.5rem;
+        text-align: left;
+    }
+
+    /* Style for each dropdown item */
+    #cs-expanded .cs-drop-li {
+        margin: 0;
+    }
+
+    /* Styling links within dropdown */
+    #cs-expanded .cs-drop-link {
+        color: #555;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        display: block;
+        border-radius: 2px;
+    }
+
+    #cs-expanded .cs-drop-link:hover {
+        color: #333;
+        background-color: #dedede;
+    }
+}

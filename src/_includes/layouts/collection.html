@@ -44,6 +44,37 @@
             <!-- Reset Button -->
             <button id="reset-filters">Show All</button>
         </div>
+
+        <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+            {% set navPages = collections.all | eleventyNavigation %}
+            {% for entry in navPages %}
+                {# Only show the "Shop" page and any pages under "Shop" with collections #}
+                {% if entry.key == "Shop" or entry.children.length > 0 %}
+                    {% set hasChild = entry.children.length > 0 %}
+        
+                    <li class="cs-li {% if hasChild %} cs-dropdown {% endif %}" {% if hasChild %} tabindex="0"{% endif %}>
+                        <a href="{{ entry.url }}" class="cs-li-link {% if entry.url == page.url %} cs-active {% endif %}">
+                            {{ entry.key }}
+                            {% if hasChild %}
+                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                            {% endif %}
+                        </a>
+        
+                        {# Render child pages under "Shop" (e.g., collections) if present #}
+                        {% if hasChild %}
+                            <ul id="" class="cs-drop-ul">
+                                {% for child in entry.children %}
+                                    <li class="cs-drop-li">
+                                        <a href="{{ child.url }}" class="cs-li-link cs-drop-link">{{ child.key }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        
     
         <!-- Stock Filter Toggle -->
         <!-- <h5>Stock Status</h5>
@@ -95,6 +126,7 @@
 </div>
 
 <script src="/assets/js/filter.js"></script>
+<script src="/assets/js/shopNav.js"></script>
 
 {% endblock %}
 

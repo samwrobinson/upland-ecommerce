@@ -967,3 +967,154 @@
         background-color: var(--medium);
     }
 }
+
+/*-- -------------------------- -->
+<---       Side By Side         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbsr-1561 {
+      padding: var(--sectionPadding);
+    }
+    #sbsr-1561 .cs-container {
+      width: 100%;
+      /* changes to 1280px at desktop */
+      max-width: 34.375rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* 48px - 64px */
+      gap: clamp(3rem, 6vw, 4rem);
+    }
+    #sbsr-1561 .cs-content {
+      /* set text align to left if content needs to be left aligned */
+      text-align: left;
+      width: 100%;
+      /* changes to 433px at desktop */
+      max-width: 33.875rem;
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: flex-start;
+    }
+    #sbsr-1561 .cs-text {
+      margin-bottom: 1rem;
+    }
+    #sbsr-1561 .cs-text:last-of-type {
+      margin-bottom: 2rem;
+    }
+    #sbsr-1561 .cs-button-solid {
+      font-size: 1rem;
+      /* 46px - 56px */
+      line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+      text-decoration: none;
+      font-weight: 700;
+      text-align: center;
+      margin: 0;
+      color: #fff;
+      min-width: 9.375rem;
+      padding: 0 3rem;
+      background-color: var(--primary);
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      /* prevents padding from adding to the width */
+      box-sizing: border-box;
+    }
+    #sbsr-1561 .cs-button-solid:before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 0%;
+      background: #000;
+      opacity: 1;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: width .3s;
+    }
+    #sbsr-1561 .cs-button-solid:hover:before {
+      width: 100%;
+    }
+    #sbsr-1561 .cs-image-group {
+      /* scales the whole group based on the view width size and stop when that vales equals .745em, resets at desktop */
+      font-size: min(1.959vw, .745em);
+      width: 46.125em;
+      /* we set a minimum height so it never gets smaller than this value */
+      min-height: 39.25em;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+    #sbsr-1561 .cs-picture {
+      position: absolute;
+    }
+    #sbsr-1561 .cs-picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    #sbsr-1561 .cs-picture1 {
+      /* the percentage heights allow them to be responsive to the height of the parent cs-image-group. On desktop, when the felxbox is set to aling-items: stretch, the cs-image group will stretch to fill the height of the parent container. So when you add more content to the cs-content group and make it taller, the cs-image group will get taller with it and every image will stretch with the parent, making this entire group responsive to the changing amounts of content next to it */
+      width: 19.0625em;
+      height: 42.197452%;
+      top: 0em;
+      left: 0;
+      z-index: -1;
+    }
+    #sbsr-1561 .cs-picture2 {
+      width: 12.3125em;
+      height: 42.197452%;
+      top: 1.3125em;
+      right: 6.75em;
+      z-index: 10;
+    }
+    #sbsr-1561 .cs-picture3 {
+      width: 13.5625em;
+      height: 36.624204%;
+      bottom: 0em;
+      left: 5.5em;
+      z-index: -1;
+    }
+    #sbsr-1561 .cs-picture4 {
+      width: 19em;
+      height: 33.757962%;
+      bottom: 3.3125em;
+      right: 0em;
+      z-index: -1;
+    }
+    #sbsr-1561 .cs-picture5 {
+      width: 19.0625em;
+      height: 70.859873%;
+      top: 5.9375em;
+      left: 13.5625em;
+      z-index: 10;
+    }
+  }
+  /* Small Desktop - 1024px */
+  @media only screen and (min-width: 64rem) {
+    #sbsr-1561 .cs-container {
+      max-width: 80rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+    #sbsr-1561 .cs-content {
+      /* this padding sets a minimum gap between the top and bottom of the content div and the top and bottom of the cs-image-group */
+      padding: 3.75rem 0;
+      /* while the cs-image-group will stretch to fill the height of the parent, this property will ensure that the cs-content group aligns itse;f in the center of the parent div instead of stretching */
+      align-self: center;
+    }
+    #sbsr-1561 .cs-image-group {
+      font-size: min(1.2vw, 1em);
+      flex: none;
+      /* sends it to the right in the 2nd position */
+      order: 2;
+    }
+  }
+                                  

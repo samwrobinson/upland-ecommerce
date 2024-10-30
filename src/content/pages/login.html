@@ -1,0 +1,45 @@
+---
+title: "The Optimization Branch"
+description: "The optimation branch of the advanced starter kit. Provides tools to optimise your website in an efficient way, including minification, bundling, automatic inlining of critical CSS, automatic asset optimization and a PostCSS pipeline."
+permalink: 'login/'
+eleventyNavigation:
+    key: 'Login'
+    order: '800'
+---
+
+{% extends 'layouts/base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/optimization.css">
+    <link rel="stylesheet" href="/assets/css/collection.css">
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+        <h1 id="home-h">About Us</h1>
+    <!--Background Image-->
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/about-upland.jpg" | resize({width: 750, height: 641}) | webp %}">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/about-upland.jpg" | resize({width: 2000, height: 696}) | webp %}">
+        <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/about-upland.jpg" | resize({width: 2000, height: 696}) | webp %}" alt="pills" width="1280" height="568" aria-hidden="true">
+    </picture>
+    </section>
+
+    <h1>Login</h1>
+    <p>This is where you gain access to the "/pro/" area.</p>
+    <form action="/.netlify/functions/login" method="POST">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" />
+      <button type="submit">Get access</button>
+    </form>
+
+
+
+{% endblock %}

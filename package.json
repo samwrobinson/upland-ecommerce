@@ -29,6 +29,7 @@
         "@shopify/buy-button-js": "^2.4.0",
         "@shopify/shopify-api": "^11.6.0",
         "autoprefixer": "^10.4.16",
+        "axios": "^1.7.7",
         "cross-env": "^7.0.3",
         "dotenv": "^16.3.1",
         "eleventy-critical-css": "^2.0.2",

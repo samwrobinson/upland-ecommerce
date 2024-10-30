@@ -13,3 +13,18 @@ package = "netlify-plugin-cache"
     "public/assets/images",
     ".cache"
   ]
+
+[[redirects]]
+  from = "/collection/wholesale/*"
+  status = 200
+  force = true
+  conditions = {Role = ["pro"]}
+
+[[redirects]]
+  from = "/collection/wholesale/*"
+  to = "/.netlify/functions/redirect"
+  status = 200
+  force = true
+
+[functions]
+  directory = "functions"

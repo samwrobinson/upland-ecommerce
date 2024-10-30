@@ -415,7 +415,7 @@
     /* Base styling for the main navigation list inside the new wrapper */
     .list-wrapper #cs-expanded {
         padding: 1rem;
-        background-color: #f4f4f4;
+        background-color: #fff;
         border-radius: 4px;
         max-width: 150px;
         font-family: 'Poppins', sans-serif;

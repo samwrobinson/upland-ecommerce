@@ -7,7 +7,7 @@ exports.handler = async function (event, context) {
   const endpoint = `${process.env.URL}/.netlify/identity/token`;
   const data = querystring.stringify({
     grant_type: 'password',
-    username: 'email@example.com',
+    username: 'sam@eskerdesigns.com',
     password: password,
   });
   const options = {
@@ -25,7 +25,7 @@ exports.handler = async function (event, context) {
       headers: {
         'Set-Cookie': `nf_jwt=${access_token}; Path=/; HttpOnly; Secure`,
         'Cache-Control': 'no-cache',
-        Location: '/pro/',
+        Location: '/collection/wholesale/',
       },
     };
   } catch (error) {

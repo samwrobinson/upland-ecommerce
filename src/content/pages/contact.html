@@ -1,0 +1,94 @@
+---
+title: "The Optimization Branch"
+description: "The optimation branch of the advanced starter kit. Provides tools to optimise your website in an efficient way, including minification, bundling, automatic inlining of critical CSS, automatic asset optimization and a PostCSS pipeline."
+permalink: 'contact/'
+eleventyNavigation:
+    key: 'Contact'
+    order: '400'
+---
+
+{% extends 'layouts/base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/contact.css">
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+        <h1 id="home-h">About Us</h1>
+        <picture>
+            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/waves.jpg">
+            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/waves.jpg">
+            <img aria-hidden="true" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/waves.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
+        </picture>
+    </section>
+
+<!-- ============================================ -->
+<!--                  Reviews                     -->
+<!-- ============================================ -->
+
+<section id="about-1451">
+    <div class="cs-container">
+        <div class="cs-info">
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/Bareroots-6.jpg" | resize({width: 500, height: 660}) | webp %}">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/Bareroots-6.jpg" | resize({width: 1044, height: 1460}) | webp %}">
+                <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/Bareroots-6.jpg" | resize({width: 1044, height: 1460}) | webp %}" alt="Moxie Robinson">
+            </picture>
+            <div class="cs-content">
+                <span class="cs-header">Moxie Robinson</span>
+                <p class="cs-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quo in tenetur eveniet iste voluptates vel, molestiae id ab nisi, nihil ipsam voluptas, sapiente doloribus facere earum vitae provident! Aperiam modi cupiditate facere eos consectetur illo necessitatibus. Deleniti corrupti molestias mollitia ipsam eius, vel dolorum quaerat totam recusandae eum voluptas quisquam harum accusantium blanditiis, reprehenderit, a aperiam nihil. Doloremque eius placeat alias excepturi esse cupiditate? Illum iure reprehenderit expedita, incidunt optio non quae harum molestiae quas sit. Dicta, ullam tempo
+                </p>
+                <p class="cs-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quo in tenetur eveniet iste voluptates vel, molestiae id ab nisi, nihil ipsam voluptas, sapiente doloribus facere earum vitae provident! Aperiam modi cupiditate facere eos consectetur illo necessitatibus. Deleniti corrupti molestias mollitia ipsam eius, vel dolorum quaerat totam recusandae eum voluptas quisquam harum accusantium blanditiis, reprehenderit, a aperiam nihil. Doloremque eius placeat alias excepturi esse cupiditate? Illum iure reprehenderit expedita, incidunt optio non quae harum molestiae quas sit. Dicta, ullam tempo
+                </p>
+                <!--Floating Graphic-->
+                <img class="cs-floater" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/seeds.svg" alt="person" width="193" height="197">
+            </div>
+        </div>
+        <div class="cs-info">
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/sam.jpg" | resize({width: 500, height: 660}) | webp %}">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/sam.jpg" | resize({width: 1044, height: 1460}) | webp %}">
+                <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/sam.jpg" | resize({width: 1044, height: 1460}) | webp %}" alt="Moxie Robinson">
+            </picture>
+            <div class="cs-content">
+                <span class="cs-header">Sam Robinson</span>
+                <p class="cs-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quo in tenetur eveniet iste voluptates vel, molestiae id ab nisi, nihil ipsam voluptas, sapiente doloribus facere earum vitae provident! Aperiam modi cupiditate facere eos consectetur illo necessitatibus. Deleniti corrupti molestias mollitia ipsam eius, vel dolorum quaerat totam recusandae eum voluptas quisquam harum accusantium blanditiis, reprehenderit, a aperiam nihil. Doloremque eius placeat alias excepturi esse cupiditate? Illum iure reprehenderit expedita, incidunt optio non quae harum molestiae quas sit. Dicta, ullam tempo
+                </p>
+                <p class="cs-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quo in tenetur eveniet iste voluptates vel, molestiae id ab nisi, nihil ipsam voluptas, sapiente doloribus facere earum vitae provident! Aperiam modi cupiditate facere eos consectetur illo necessitatibus. Deleniti corrupti molestias mollitia ipsam eius, vel dolorum quaerat totam recusandae eum voluptas quisquam harum accusantium blanditiis, reprehenderit, a aperiam nihil. Doloremque eius placeat alias excepturi esse cupiditate? Illum iure reprehenderit expedita, incidunt optio non quae harum molestiae quas sit. Dicta, ullam tempo
+                </p>
+                <!--Floating Graphic-->
+                <img class="cs-floater" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/seeds.svg" alt="person" width="193" height="197">
+            </div>
+        </div>
+    </div>
+</section>
+                                
+    
+    {# Inlining the script tag to make it easier when merging #}
+    <script>
+        const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
+        for (const item of faqItems) {
+            const onClick = () => {
+                item
+                    .classList
+                    .toggle('active')
+            }
+            item.addEventListener('click', onClick)
+        }
+    </script>
+
+{% endblock %}

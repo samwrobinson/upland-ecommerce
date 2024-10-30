@@ -7,40 +7,39 @@ document.addEventListener("DOMContentLoaded", function () {
     const stockFilterButtons = document.querySelectorAll('.stock-filter-button');
     const productItems = Array.from(document.querySelectorAll('.cs-item'));
 
-    // Track active filters
-    let activePriceRange = { min: null, max: null };
-    let activeStockStatus = null;
-
-    // Function to apply both stock and price filters
-    function applyFilters() {
+    // Function to filter products by price range
+    function filterProducts(minPrice, maxPrice) {
         productItems.forEach(item => {
             const productPrice = parseFloat(item.dataset.price);
-            const productStock = item.dataset.stock;
-            const inPriceRange = (activePriceRange.min === null || productPrice >= activePriceRange.min) &&
-                                 (activePriceRange.max === null || productPrice <= activePriceRange.max);
-            const inStockStatus = activeStockStatus === null || productStock === activeStockStatus;
-
-            item.style.display = inPriceRange && inStockStatus ? 'block' : 'none';
+            const inPriceRange = productPrice >= minPrice && (maxPrice === undefined || productPrice <= maxPrice);
+            item.style.display = inPriceRange ? 'block' : 'none';
         });
     }
 
-    // Function to filter by stock
-    function setStockFilter(stockStatus) {
-        activeStockStatus = stockStatus;
-        applyFilters();
-    }
-
-    // Function to filter by price
-    function setPriceFilter(minPrice, maxPrice) {
-        activePriceRange = { min: minPrice, max: maxPrice };
-        applyFilters();
+    // Function to filter products by stock status
+    function filterByStock(stockStatus) {
+        console.log(`Filtering by stock status: ${stockStatus}`);
+        productItems.forEach(item => {
+            const productStock = item.dataset.stock; // Read stock status from data attribute
+            const productName = item.querySelector('.cs-product').innerText;
+            console.log(`Product: ${productName}, Stock: ${productStock}`);
+            
+            // Check if product stock matches the desired stock status
+            if (productStock === stockStatus) {
+                item.style.display = 'block';
+                console.log(`Showing: ${productName}`);
+            } else {
+                item.style.display = 'none';
+                console.log(`Hiding: ${productName}`);
+            }
+        });
     }
 
     // Event listeners for stock filter buttons
     stockFilterButtons.forEach(button => {
         button.addEventListener('click', () => {
             const stockStatus = button.dataset.stock;
-            setStockFilter(stockStatus);
+            filterByStock(stockStatus);
         });
     });
 
@@ -48,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             const minPrice = parseInt(button.dataset.min, 10);
-            const maxPrice = button.dataset.max ? parseInt(button.dataset.max, 10) : null;
-            setPriceFilter(minPrice, maxPrice);
+            const maxPrice = button.dataset.max ? parseInt(button.dataset.max, 10) : undefined;
+            filterProducts(minPrice, maxPrice);
         });
     });
 
@@ -74,15 +73,15 @@ document.addEventListener("DOMContentLoaded", function () {
     sortAscButton.addEventListener('click', () => sortProducts('asc'));
     sortDescButton.addEventListener('click', () => sortProducts('desc'));
 
+
     // Reset button to show all products
     resetButton.addEventListener('click', () => {
-        activePriceRange = { min: null, max: null };
-        activeStockStatus = null;
         productItems.forEach(item => {
             item.style.display = 'block';
         });
     });
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.getElementById("price-filter-toggle");
@@ -91,10 +90,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const stockFilters = document.getElementById("stock-filter-buttons");
 
     toggleButton.addEventListener("click", function () {
-        priceFilters.style.display = priceFilters.style.display === "none" ? "flex" : "none";
+        // Toggle the visibility of the price filter buttons
+        if (priceFilters.style.display === "none") {
+            priceFilters.style.display = "flex";
+        } else {
+            priceFilters.style.display = "none";
+        }
     });
 
     stockButton.addEventListener("click", function () {
-        stockFilters.style.display = stockFilters.style.display === "none" ? "flex" : "none";
+        // Toggle the visibility of the stock filter buttons
+        if (stockFilters.style.display === "none") {
+            stockFilters.style.display = "flex";
+        } else {
+            stockFilters.style.display = "none";
+        }
     });
 });

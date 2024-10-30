@@ -46,16 +46,16 @@ eleventyNavigation:
     <section id="sbs-523">
         <div class="cs-container">
             <div class="cs-content">
-                <span class="cs-topper">Lorem Ipsum</span>
-                <h2 class="cs-title">Lorem ipsum dolor sit amet</h2>
+                <span class="cs-topper">From the Heart of Vermont</span>
+                <h2 class="cs-title">To Your Home.</h2>
                 <p class="cs-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tincidunt quam sit amet dolor consectetur, ut suscipit felis sagittis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer id dui sed leo hendrerit feugiat.
+                    Crafted with care and inspired by the rugged beauty of the Green Mountains, Upland Coffee is more than just a cup of coffee; it’s a Vermont tradition. We hand-roast each batch, blending sustainable practices with bold, distinctive flavors to bring you a coffee experience like no other.
                 </p>
                 <p class="cs-text">
-                    Curabitur ultrices, ligula a vehicula dictum, lacus ipsum cursus lectus, at fermentum metus dolor vitae odio. Proin euismod, nulla in posuere dictum, lorem eros volutpat lacus, in laoreet felis sapien vitae leo. Sed a libero quis mi ultrices laoreet in in urna.
+                    Founded in 2022, Upland Coffee began as a winter project for founders Moxie and Sam Robinson after Moxie’s ACL injury put her mountain adventures on hold. Bonding over a shared passion, they discovered a love for crafting small-batch coffee that blossomed into Upland Coffee.
                 </p>
                 <p class="cs-text">
-                    Donec vel sapien sit amet nunc dictum blandit id vitae nunc. Fusce imperdiet, velit sed commodo faucibus, nunc lorem ullamcorper justo, ut facilisis neque erat ac turpis. Nulla facilisi. Suspendisse potenti. Etiam in libero ac nisi malesuada finibus sit amet id odio.
+                    With backgrounds as diverse as Vermont itself, Moxie and Sam Robinson bring artistry, passion, and experience to each roast. From marketing to perfecting the roast, this duo has transformed Upland Coffee from a small project into a craft coffee brand that brings a taste of Vermont to you.
                 </p>
                 <a href="" class="cs-button-solid">Read More</a>
             </div>
@@ -134,7 +134,7 @@ eleventyNavigation:
         </div>
         <ul class="cs-card-group">
             <li class="cs-item">
-                <a href="/collection/beans" class="cs-link">
+                <a href="/collection/coffee" class="cs-link">
                     <span class="cs-category">Coffee</span>
                     <picture class="cs-background" aria-hidden="true">
                         <source media="(max-width: 600px)"
@@ -156,7 +156,21 @@ eleventyNavigation:
                         <source media="(min-width: 601px)"
                                 srcset="{% getUrl "/assets/images/equipment.jpg" | resize({width: 610, height: 696}) | webp %}">
                         <img loading="lazy" decoding="async"
-                                src="{% getUrl "/assets/images/coffee.jpg" | resize({width: 610, height: 696}) | webp %}"
+                                src="{% getUrl "/assets/images/equipment.jpg" | resize({width: 610, height: 696}) | webp %}"
+                                alt="Brewing with Chemex">
+                    </picture>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="/collection/frontpage" class="cs-link">
+                    <span class="cs-category">Merch</span>
+                    <picture class="cs-background" aria-hidden="true">
+                        <source media="(max-width: 600px)"
+                                srcset="{% getUrl "/assets/images/merch.jpg" | resize({width: 686, height: 450}) | webp %}">
+                        <source media="(min-width: 601px)"
+                                srcset="{% getUrl "/assets/images/merch.jpg" | resize({width: 610, height: 696}) | webp %}">
+                        <img loading="lazy" decoding="async"
+                                src="{% getUrl "/assets/images/merch.jpg" | resize({width: 610, height: 696}) | webp %}"
                                 alt="Brewing with Chemex">
                     </picture>
                 </a>

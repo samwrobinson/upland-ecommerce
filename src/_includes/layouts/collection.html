@@ -29,7 +29,7 @@
     
         <!-- Price Filter Toggle -->
         <h5>Price</h5>
-        <button id="price-filter-toggle" class="toggle-button">Toggle Price Filters</button>
+        <button id="price-filter-toggle" class="toggle-button">Toggle Filters</button>
         <div class="price-filter-buttons" id="price-filter-buttons" style="display: none;">
             <!-- Price Filters -->
             <button class="filter-button" data-min="0" data-max="50">$0 - $50</button>
@@ -46,12 +46,12 @@
         </div>
     
         <!-- Stock Filter Toggle -->
-        <h5>Stock Status</h5>
+        <!-- <h5>Stock Status</h5>
         <button id="stock-filter-toggle" class="toggle-button">Toggle Stock Filters</button>
         <div class="stock-filter-buttons" id="stock-filter-buttons" style="display: none;">
             <button class="stock-filter-button" data-stock="in">In Stock</button>
             <button class="stock-filter-button" data-stock="out">Out of Stock</button>
-        </div>
+        </div> -->
     </section>
     
     <!-- Render Collection -->
@@ -60,7 +60,9 @@
             <div class="cs-card-group" id="product-list">
                 {% for product in shopProducts | getProductsInCollection(shopCollection.idNumber) %}
                     {% if product.images | length > 0 %}
-                        <div class="cs-item" data-price="{{ product.priceRange.minVariantPrice.amount }}" data-stock="{{ 'out' if product.availableForSale else 'in' }}">
+                        <div class="cs-item" 
+                        data-price="{{ product.priceRange.minVariantPrice.amount }}" 
+                        data-stock="{{ 'in' if product.availableForSale else 'out' }}">
                             <a href="/shop/{{ product.handle }}" class="cs-link">
                                 <div class="cs-image-group">
                                     <picture class="cs-picture">
@@ -95,3 +97,4 @@
 <script src="/assets/js/filter.js"></script>
 
 {% endblock %}
+

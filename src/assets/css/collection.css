@@ -93,6 +93,7 @@
 
     .price-filter-buttons > * {
         max-width: 100px;
+        padding: 5px;
         background-color: var(--primary);
         font-family: 'Poppins', sans-serif;
         border: none;
@@ -200,6 +201,7 @@
         padding: 9px;
         margin: 4px 15px;
         width: 100%;
+        min-width: 100px;
         max-width: 200px;
     }
 

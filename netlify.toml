@@ -22,10 +22,10 @@ package = "netlify-plugin-cache"
 
 [[redirects]]
   from = "/collection/wholesale/*"
-  to = "/login/"
-  status = 302
+  to = "/.netlify/functions/redirect"
+  status = 200
   force = true
 
 
 [functions]
-  directory = "functions"
+  directory = "sr/functions"

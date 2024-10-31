@@ -32,13 +32,17 @@ eleventyNavigation:
     </picture>
     </section>
 
-    <h1>Login</h1>
-    <p>This is where you gain access to the "/pro/" area.</p>
-    <form action="/.netlify/functions/login" method="POST">
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" />
-      <button type="submit">Get access</button>
-    </form>
+    <section id="login">
+        <div class="content">
+            <h1>Login</h1>
+            <p>Please provide the password to enter our Wholesale Product Inventory.</p>
+            <form action="/.netlify/functions/login" method="POST">
+              <label for="password">Password</label>
+              <input type="password" name="password" id="password" />
+              <button type="submit">Get access</button>
+            </form>
+        </div>
+    </section>
 
 
 

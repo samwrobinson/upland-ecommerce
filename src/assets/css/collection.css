@@ -487,3 +487,15 @@
         background-color: #dedede;
     }
 }
+
+#login {
+    .content {
+        width: 100%;
+        max-width: 70rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+}

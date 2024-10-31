@@ -11,6 +11,7 @@ eleventyNavigation:
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/contact.css">
+    <link rel="stylesheet" href="/assets/css/collection.css">
 {% endblock %}
 
 {% block body %}
@@ -18,10 +19,8 @@ eleventyNavigation:
 <!--                   Banner                     -->
 <!-- ============================================ -->
 
-<div id="ContactBanner-721">
-    <div class="cs-container">
-        <span class="cs-int-title">Contact Us</span>
-    </div>
+<section id="int-hero">
+    <h1 id="home-h">Contact Us</h1>
     <!--Background Image-->
     <picture class="cs-background">
         <!--Mobile Image-->
@@ -30,7 +29,7 @@ eleventyNavigation:
         <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/contact.jpg" | resize({width: 2000, height: 696}) | webp %}">
         <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/contact.jpg" | resize({width: 2000, height: 696}) | webp %}" alt="pills" width="1280" height="568" aria-hidden="true">
     </picture>
-</div>
+</section>
 
 <!-- ============================================ -->
 <!--                   Contact                    -->
@@ -129,10 +128,10 @@ eleventyNavigation:
     <div class="cs-container">
         <picture class="cs-picture">
             <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FLandscapes%2Frocks-m.jpg">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/faq.jpg" | resize({width: 750, height: 312}) | webp %}">
             <!--Tablet and above Image-->
-            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FLandscapes%2Frocks.jpg">
-            <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FLandscapes%2Frocks.jpg" alt="rocks" width="650" height="740" aria-hidden="true">
+            <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/faq.jpg" | resize({width: 884, height: 1400}) | webp %}">
+            <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/faq.jpg" | resize({width: 884, height: 1400}) | webp %}" alt="rocks" width="650" height="740" aria-hidden="true">
         </picture>
         <div class="cs-content">
             <span class="cs-topper">Have Questions?</span>
@@ -181,7 +180,6 @@ eleventyNavigation:
             </ul>
         </div>
     </div>
-    <img class="cs-graphic" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fswoosh.svg" alt="swoosh" width="361" height="487" aria-hidden="true">
 </section>
 
                                 

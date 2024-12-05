@@ -78,6 +78,7 @@
         /* 60px - 100px top and bottom */
         --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
         --bodyFontFamily: 'Poppins', sans-serif;
+        --bodyFontFamily: Arial, Helvetica, sans-serif;
     }
     body {
         font-family: var(--bodyFontFamily);
@@ -139,6 +140,7 @@
         box-sizing: border-box;
         padding: 0 1.5rem;
         color: #fff;
+        color: #1a1a1a;
         background-color: var(--primary);
         display: inline-block;
         position: relative;
@@ -901,6 +903,7 @@
     #cs-navigation .cs-bottom-bar {
         width: 100%;
         background-color: #fff;
+        background-color: #1a1a1a;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -961,6 +964,7 @@
         text-decoration: none;
         margin: 0;
         color: var(--primary);
+        color: var(--bodyTextColorWhite);
         display: block;
         position: relative;
         transition: color 0.3s;
@@ -1448,6 +1452,7 @@
 @media only screen and (min-width: 0rem) {
     #footer-1390 {
         padding: var(--sectionPadding);
+        background-color: #1a1a1a;
         position: relative;
         z-index: 1;
     }
@@ -1502,6 +1507,7 @@
     #footer-1390 .cs-logo {
         width: 100%;
         max-width: 8.0625rem;
+        max-width: 13.0625rem;
         height: auto;
         display: block;
     }

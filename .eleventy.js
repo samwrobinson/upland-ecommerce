@@ -23,6 +23,9 @@ const configShopify = require("./src/config/plugins/shopify");
 // Filter Imports
 const filterGetProductsInCollection = require("./src/config/filters/getProductsInCollection");
 
+// Filter Imports
+const filterFormatDate = require("./src/config/filters/formatDate");
+
 module.exports = function (eleventyConfig) {
     /**
      *  PLUGINS
@@ -96,6 +99,16 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addTemplateFormats("js");
     eleventyConfig.addExtension("js", configJs);
     eleventyConfig.addFilter("getProductsInCollection", filterGetProductsInCollection);
+    eleventyConfig.addPassthroughCopy("./src/admin");
+
+    /**
+     *  FILTERS
+     *      Allows modification of data before it is outputted, denoted by {{ contentToPrint | filterName }}
+     *          https://www.11ty.dev/docs/filters/
+     */
+
+    // Turns a date from ISO format to a more human-readable one
+    eleventyConfig.addFilter("formatDate", filterFormatDate);
 
     return {
         dir: {

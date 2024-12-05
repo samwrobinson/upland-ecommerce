@@ -4,13 +4,12 @@ const pluginEleventyNavigation = require("@11ty/eleventy-navigation");
 const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
 const pluginMinifier = require("@sherby/eleventy-plugin-files-minifier");
 const pluginCritical = require("eleventy-critical-css");
-const pluginImage = require("eleventy-plugin-img2picture");
 const eleventyPluginSharpImages = require("@codestitchofficial/eleventy-plugin-sharp-images");
 
 // Config Imports
 const configSitemap = require("./src/config/plugins/sitemap");
 const configCritical = require("./src/config/plugins/critical");
-const configImage = require("./src/config/plugins/image");
+
 const configCss = require("./src/config/eleventy/css");
 const configJs = require("./src/config/eleventy/javascript");
 
